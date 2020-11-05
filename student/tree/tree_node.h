@@ -14,7 +14,7 @@ public:
 	tree_node() = default;
 	tree_node(const char *name, int value): student(name, value) { left = nullptr; right = nullptr; }
 	tree_node(const tree_node &x): student(x) { left = nullptr; right = nullptr; }
-	tree_node(tree_node &&x): student(x)
+	tree_node(tree_node &&x): student(static_cast<student &&>(x))
 	{
 		left = x.left;
 		x.left = nullptr;

@@ -1,5 +1,6 @@
 #include "tree.h"
 #include "list2_width.h"
+#include "width_node.h"
 int width_node(int desired_depth, tree_node *node, int curr_depth);
 
 int tree::max_width() const
@@ -14,7 +15,7 @@ int tree::max_width() const
 	{
 		if( lst.next_depth()!=list2_width::SUCCESS )
 		{
-			while( (curr_width = width_node(depth, root, 0))!=0 )
+			while( (curr_width = width_node(depth, root))!=0 )
 			{
 				if( curr_width>max )
 					max = curr_width;
@@ -27,23 +28,4 @@ int tree::max_width() const
 	}
 
 	return max;
-}
-
-int width_node(int desired_depth, tree_node *node, int curr_depth)
-{
-	int res = 0;
-
-	while( node!=nullptr )
-	{
-		if( curr_depth==desired_depth )
-		{
-			res++;
-			break;
-		}
-		res += width_node(desired_depth, node->get_left(), curr_depth + 1);
-		node = node->get_right();
-		curr_depth++;
-	}
-
-	return res;
 }

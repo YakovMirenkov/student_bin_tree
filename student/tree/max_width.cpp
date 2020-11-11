@@ -1,7 +1,6 @@
 #include "tree.h"
 #include "list2_width.h"
 #include "width_node.h"
-int width_node(int desired_depth, tree_node *node, int curr_depth);
 
 int tree::max_width() const
 {

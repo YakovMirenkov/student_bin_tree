@@ -11,7 +11,7 @@ int max_depth_node(tree_node *node)
 	int depth_left, depth_right;
 
 	if( node==nullptr )
-		return 0;
+		return -1;
 
 	depth_left = max_depth_node(node->get_left());
 	depth_right = max_depth_node(node->get_right());

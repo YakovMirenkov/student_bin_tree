@@ -119,7 +119,7 @@ void print_node(tree_node *node, int depth)
 {
 	int i;
 
-	while( node!=nullptr && depth<depth_print )
+	while( node!=nullptr && depth<=depth_print )
 	{
 		for( i = 0; i<2*depth; i++ )
 			printf(" ");

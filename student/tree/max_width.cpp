@@ -14,7 +14,7 @@ int tree::max_width() const
 	{
 		if( lst.next_depth()!=list2_width::SUCCESS )
 		{
-			while( (curr_width = width_node(depth, root))!=0 )
+			while( (curr_width = width_node(root, depth))!=0 )
 			{
 				if( curr_width>max )
 					max = curr_width;

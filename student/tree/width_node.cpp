@@ -1,6 +1,6 @@
 #include "width_node.h"
 
-int width_node(int desired_depth, tree_node *node)
+int width_node(tree_node *node, int desired_depth)
 {
 	int res = 0;
 
@@ -12,7 +12,7 @@ int width_node(int desired_depth, tree_node *node)
 			break;
 		}
 		desired_depth--;
-		res += width_node(desired_depth, node->get_left());
+		res += width_node(node->get_left(), desired_depth);
 		node = node->get_right();
 	}
 

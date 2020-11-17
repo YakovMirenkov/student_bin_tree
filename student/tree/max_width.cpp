@@ -20,7 +20,7 @@ int tree::max_width() const
 					max = curr_width;
 				depth++;
 			}
-			break;
+			return max;
 		}
 		if( lst.width>max )
 			max = lst.width;

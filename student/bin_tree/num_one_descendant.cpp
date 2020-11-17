@@ -1,15 +1,15 @@
-#include "tree.h"
-int num_one_descendant_node(tree_node *node);
+#include "bin_tree.h"
+int num_one_descendant_node(bin_tree_node *node);
 
-int tree::num_one_descendant() const
+int bin_tree::num_one_descendant() const
 {
 	return num_one_descendant_node(root);
 }
 
-int num_one_descendant_node(tree_node *node)
+int num_one_descendant_node(bin_tree_node *node)
 {
 	int num = 0;
-	tree_node *tmp;
+	bin_tree_node *tmp;
 
 	while( node!=nullptr )
 	{

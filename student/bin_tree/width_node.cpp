@@ -1,6 +1,6 @@
 #include "width_node.h"
 
-int width_node(tree_node *node, int desired_depth)
+int width_node(bin_tree_node *node, int desired_depth)
 {
 	int res = 0;
 

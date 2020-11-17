@@ -1,11 +1,11 @@
 #include <cstdio>
-#include "tree.h"
-void rm_node(tree_node *node);
-void print_node(tree_node *node, int depth);
+#include "bin_tree.h"
+void rm_node(bin_tree_node *node);
+void print_node(bin_tree_node *node, int depth);
 
-void rm_node(tree_node *node)
+void rm_node(bin_tree_node *node)
 {
-	tree_node *tmp;
+	bin_tree_node *tmp;
 
 	while( node!=nullptr )
 	{
@@ -16,16 +16,16 @@ void rm_node(tree_node *node)
 	}
 }
 
-void tree::rm()
+void bin_tree::rm()
 {
 	rm_node(root);
 	root = nullptr;
 }
 
 
-void tree::add_node(tree_node *new_node) const
+void bin_tree::add_node(bin_tree_node *new_node) const
 {
-	tree_node *tmp = root;
+	bin_tree_node *tmp = root;
 
 	while( true )
 	{
@@ -49,14 +49,14 @@ void tree::add_node(tree_node *new_node) const
 	}
 }
 
-int tree::read(const char *filename)
+int bin_tree::read(const char *filename)
 {
 	FILE *in;
 	int res;
-	tree_node *new_node;
+	bin_tree_node *new_node;
 
 	rm();
-	if( (root = new tree_node)==nullptr )
+	if( (root = new bin_tree_node)==nullptr )
 		return ALLOC_ERROR;
 	if( !(in = fopen(filename, "r")) )
 	{
@@ -81,7 +81,7 @@ int tree::read(const char *filename)
 
 	}
 
-	if( (new_node = new tree_node)==nullptr )
+	if( (new_node = new bin_tree_node)==nullptr )
 	{
 		fclose(in);
 		rm();
@@ -90,7 +90,7 @@ int tree::read(const char *filename)
 	while( (res = new_node->read(in))==student::SUCCESS )
 	{
 		add_node(new_node);
-		if( (new_node = new tree_node)==nullptr )
+		if( (new_node = new bin_tree_node)==nullptr )
 		{
 			fclose(in);
 			rm();
@@ -115,7 +115,7 @@ int tree::read(const char *filename)
 
 static int depth_print = 0;
 
-void print_node(tree_node *node, int depth)
+void print_node(bin_tree_node *node, int depth)
 {
 	int i;
 
@@ -132,7 +132,7 @@ void print_node(tree_node *node, int depth)
 	}
 }
 
-void tree::print(int depth)
+void bin_tree::print(int depth)
 {
 	depth_print = depth;
 

@@ -1,12 +1,12 @@
-#include "tree.h"
-int max_depth_node(tree_node *node);
+#include "bin_tree.h"
+int max_depth_node(bin_tree_node *node);
 
-int tree::max_depth() const
+int bin_tree::max_depth() const
 {
 	return max_depth_node(root);
 }
 
-int max_depth_node(tree_node *node)
+int max_depth_node(bin_tree_node *node)
 {
 	int depth_left, depth_right;
 

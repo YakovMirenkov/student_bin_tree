@@ -1,13 +1,13 @@
-#ifndef TREE_H
-#define TREE_H
+#ifndef BIN_TREE_H
+#define BIN_TREE_H
 
-#include "tree_node.h"
+#include "bin_tree_node.h"
 
-class tree
+class bin_tree
 {
 private:
-	tree_node *root = nullptr;
-	void add_node(tree_node *new_node) const;
+	bin_tree_node *root = nullptr;
+	void add_node(bin_tree_node *new_node) const;
 public:
 	enum ERRORS
 	{
@@ -17,11 +17,11 @@ public:
 		ALLOC_ERROR
 	};
 
-	tree_node *get_root() const { return root; };
+	bin_tree_node *get_root() const { return root; };
 	void rm();
 	int read(const char *filename);
 	void print(int depth);
-	~tree() { rm(); }
+	~bin_tree() { rm(); }
 	int num_ends() const;
 	int max_depth() const;
 	int max_width() const;
@@ -34,4 +34,4 @@ public:
 	int num_nodes_depth(int depth) const;
 };
 
-#endif// TREE_H
+#endif// BIN_TREE_H

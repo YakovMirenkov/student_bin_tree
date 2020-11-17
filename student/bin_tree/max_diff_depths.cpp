@@ -1,8 +1,8 @@
 #include <cstdlib>
-#include "tree.h"
-int diff_depths_node(tree_node *node, int &max_diff);
+#include "bin_tree.h"
+int diff_depths_node(bin_tree_node *node, int &max_diff);
 
-int tree::max_diff_depths() const
+int bin_tree::max_diff_depths() const
 {
 	int max_diff = -1;
 
@@ -11,7 +11,7 @@ int tree::max_diff_depths() const
 	return max_diff;
 }
 
-int diff_depths_node(tree_node *node, int &max_diff)
+int diff_depths_node(bin_tree_node *node, int &max_diff)
 {
 	int depth_left, depth_right;
 

@@ -1,8 +1,8 @@
-#include "tree.h"
+#include "bin_tree.h"
 #include "list2_width.h"
 #include "width_node.h"
 
-int tree::max_width() const
+int bin_tree::max_width() const
 {
 	int max = 1, depth, curr_width;
 	list2_width lst{root};

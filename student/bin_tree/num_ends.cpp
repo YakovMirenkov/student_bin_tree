@@ -1,12 +1,12 @@
-#include "tree.h"
-int num_ends_node(tree_node *node);
+#include "bin_tree.h"
+int num_ends_node(bin_tree_node *node);
 
-int tree::num_ends() const
+int bin_tree::num_ends() const
 {
 	return num_ends_node(root);
 }
 
-int num_ends_node(tree_node *node)
+int num_ends_node(bin_tree_node *node)
 {
 	int num = 0;
 

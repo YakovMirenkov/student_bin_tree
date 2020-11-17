@@ -13,7 +13,7 @@ void list2_width::rm()
 	width = 0;
 }
 
-list2_width::list2_width(tree_node *new_x)
+list2_width::list2_width(bin_tree_node *new_x)
 {
 	rm();
 

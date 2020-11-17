@@ -2,7 +2,7 @@
 #define LIST2_WIDTH_H
 
 #include "list2_width_node.h"
-#include "tree_node.h"
+#include "bin_tree_node.h"
 
 class list2_width
 {
@@ -20,11 +20,11 @@ public:
 	int get_width() const { return width; }
 	void rm();
 	list2_width() = default;
-	list2_width(tree_node *x);
+	list2_width(bin_tree_node *x);
 	~list2_width() { rm(); }
 	int next_depth();
 	void print(int length) const;
-	friend class tree;
+	friend class bin_tree;
 };
 
 #endif// LIST2_WIDTH_H

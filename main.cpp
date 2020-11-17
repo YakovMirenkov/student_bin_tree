@@ -1,12 +1,12 @@
 #include <cstdio>
 #include <ctime>
-#include "student/tree/tree.h"
+#include "student/bin_tree/bin_tree.h"
 
 #define ERROR (-1)
 
 int main(int argc, const char **argv)
 {
-	tree tr;
+	bin_tree tr;
 	int depth_print, param, read_res, num_ends, max_depth, max_width, max_diff_depths, num_one_descendant, num_sbtrs_nng, num_nodes_sbtrs_nng, num_sbtrs_depth_ng, num_sbtrs_width_ng, num_nodes_depth;
 	const char *name;
 	clock_t begin, end;
@@ -21,17 +21,17 @@ int main(int argc, const char **argv)
 	begin = clock();
 	read_res = tr.read(name);
 	end = clock();
-	if( read_res!=tree::SUCCESS )
+	if( read_res!=bin_tree::SUCCESS )
 	{
 		switch( read_res )
 		{
-		case tree::OPEN_ERROR:
+		case bin_tree::OPEN_ERROR:
 			fprintf(stderr, "Can not open %s!\n", name);
 			break;
-		case tree::READ_ERROR:
+		case bin_tree::READ_ERROR:
 			fprintf(stderr, "Can not read from %s!\n", name);
 			break;
-		case tree::ALLOC_ERROR:
+		case bin_tree::ALLOC_ERROR:
 			fprintf(stderr, "Can not allocate memory!\n");
 			break;
 		default:

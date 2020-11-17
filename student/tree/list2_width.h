@@ -16,6 +16,8 @@ public:
 		ALLOC_ERROR
 	};
 
+	list2_width_node *get_head() const { return head; }
+	int get_width() const { return width; }
 	void rm();
 	list2_width() = default;
 	list2_width(tree_node *x);

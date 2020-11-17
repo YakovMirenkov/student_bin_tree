@@ -11,9 +11,9 @@ all: research.out research_debug.out
 %_debug.o: %.cpp
 	g++ $(CXXFLAGS_DEBUG) -c $< -o $@
 
-research.out: main.o $(STUDENT_PATH)/student.o $(TREE_PATH)/tree.o $(TREE_PATH)/num_ends.o $(TREE_PATH)/max_depth.o $(TREE_PATH)/list2_width.o $(TREE_PATH)/width_node.o $(TREE_PATH)/max_width.o $(TREE_PATH)/max_diff_depths.o $(TREE_PATH)/num_one_descendant.o
+research.out: main.o $(STUDENT_PATH)/student.o $(TREE_PATH)/tree.o $(TREE_PATH)/num_ends.o $(TREE_PATH)/max_depth.o $(TREE_PATH)/list2_width.o $(TREE_PATH)/width_node.o $(TREE_PATH)/max_width.o $(TREE_PATH)/max_diff_depths.o $(TREE_PATH)/num_one_descendant.o $(TREE_PATH)/num_sbtrs_nng.o $(TREE_PATH)/num_nodes_sbtrs_nng.o $(TREE_PATH)/num_sbtrs_depth_ng.o $(TREE_PATH)/num_sbtrs_width_ng.o $(TREE_PATH)/num_nodes_depth.o
 	g++ $(CXXFLAGS) $^ -o $@
-research_debug.out: main_debug.o $(STUDENT_PATH)/student_debug.o $(TREE_PATH)/tree_debug.o $(TREE_PATH)/num_ends_debug.o $(TREE_PATH)/max_depth_debug.o $(TREE_PATH)/list2_width_debug.o $(TREE_PATH)/width_node_debug.o $(TREE_PATH)/max_width_debug.o $(TREE_PATH)/max_diff_depths_debug.o $(TREE_PATH)/num_one_descendant_debug.o
+research_debug.out: main_debug.o $(STUDENT_PATH)/student_debug.o $(TREE_PATH)/tree_debug.o $(TREE_PATH)/num_ends_debug.o $(TREE_PATH)/max_depth_debug.o $(TREE_PATH)/list2_width_debug.o $(TREE_PATH)/width_node_debug.o $(TREE_PATH)/max_width_debug.o $(TREE_PATH)/max_diff_depths_debug.o $(TREE_PATH)/num_one_descendant_debug.o $(TREE_PATH)/num_sbtrs_nng_debug.o $(TREE_PATH)/num_nodes_sbtrs_nng_debug.o $(TREE_PATH)/num_sbtrs_depth_ng_debug.o $(TREE_PATH)/num_sbtrs_width_ng_debug.o $(TREE_PATH)/num_nodes_depth_debug.o
 	g++ $(CXXFLAGS_DEBUG) $^ -o $@
 
 mrproper: mrproper_current mrproper_student mrproper_tree

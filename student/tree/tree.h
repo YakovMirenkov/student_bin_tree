@@ -27,6 +27,11 @@ public:
 	int max_width() const;
 	int max_diff_depths() const;
 	int num_one_descendant() const;
+	int num_sbtrs_nng(int max) const;
+	int num_nodes_sbtrs_nng(int max) const;
+	int num_sbtrs_depth_ng(int max) const;
+	int num_sbtrs_width_ng(int max) const;
+	int num_nodes_depth(int depth) const;
 };
 
 #endif// TREE_H

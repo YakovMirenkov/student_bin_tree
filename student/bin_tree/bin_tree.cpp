@@ -35,16 +35,16 @@ void bin_tree::add_node(bin_tree_node *new_node) const
 			{
 				tmp->left = new_node;
 				return;
-			} else
-				tmp = tmp->left;
+			}
+			tmp = tmp->left;
 		} else
 		{
 			if( tmp->right==nullptr )
 			{
 				tmp->right = new_node;
 				return;
-			} else
-				tmp = tmp->right;
+			}
+			tmp = tmp->right;
 		}
 	}
 }
@@ -78,7 +78,6 @@ int bin_tree::read(const char *filename)
 		default:
 			return READ_ERROR;
 		}
-
 	}
 
 	if( (new_node = new bin_tree_node)==nullptr )

@@ -20,7 +20,7 @@ public:
 	bin_tree_node *get_root() const { return root; };
 	void rm();
 	int read(const char *filename);
-	void print(int depth);
+	void print(int depth) const;
 	~bin_tree() { rm(); }
 	int num_ends() const;
 	int max_depth() const;

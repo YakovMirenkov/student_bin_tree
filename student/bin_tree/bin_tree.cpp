@@ -131,7 +131,7 @@ void print_node(bin_tree_node *node, int depth)
 	}
 }
 
-void bin_tree::print(int depth)
+void bin_tree::print(int depth) const
 {
 	depth_print = depth;
 
